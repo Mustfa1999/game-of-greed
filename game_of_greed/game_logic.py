@@ -4,8 +4,8 @@ from collections import Counter
 
 class GameLogic:
 
-    @classmethod
-    def calculate_score(self, rolls):
+    @staticmethod
+    def calculate_score(rolls):
         """
         This function takes a tuple represents the rolls
         of dices (0 ~ 6), and return the score based on
@@ -57,8 +57,8 @@ class GameLogic:
         return score
 
 
-    @classmethod
-    def roll_dice(self, dices):
+    @staticmethod
+    def roll_dice(dices):
         """
         This function simulates a dice roll, it's repeated
         (dices) of times and return a tuple of results

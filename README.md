@@ -1,6 +1,13 @@
 # Game of Greed
 Game of greed is a game where each player competes to be the first to reach 10,000 points.
 
+## Group 2 team:
+
+ - Mustafa Alhasanat
+ - Diala Abul-Khail
+ - Abedalqader Alkhatib
+ - Eman Al-Shaikh Hussain
+ 
 ## Overview
 
 This lab is about tackling the highest risk and/or highest priority features - scoring, dice rolling and banking of points.

@@ -6,7 +6,7 @@ Game of greed is a game where each player competes to be the first to reach 10,0
  - Mustafa Alhasanat > [My Pull Request](https://github.com/Mustfa1999/game-of-greed/pull/6)
  - Diala Abul-Khail
  - Abedalqader Alkhatib
- - Eman Al-Shaikh Hussain
+ - Eman Al-Shaikh Hussain 
  
 ## Overview
 

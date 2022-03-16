@@ -7,7 +7,7 @@ class Banker:
 
     def __init__(self):
         self.shelved = 0
-        self. balance = 0
+        self.balance = 0
 
     def shelf(self, points: int):
         """shelf (instance method): 

@@ -1,7 +1,7 @@
 class Banker:
     """
     Description:
-    A class to handle the points in game of greed.
+    A class to handle the points in game of greed..
 
     """
 

@@ -68,7 +68,7 @@ class GameLogic:
 
 
 if __name__ == "__main__":
-    print(GameLogic.calculate_score((4,6)))
+    print(GameLogic.calculate_score((5,5,5,5,4,6)))
 
 
 

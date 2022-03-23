@@ -7,6 +7,7 @@ import builtins
 import re
 from game_of_greed_v2.game import Game
 from game_of_greed.game_logic import GameLogic
+from collections import Counter
 
 
 class BaseBot(ABC):
@@ -137,21 +138,29 @@ class NervousNellie(BaseBot):
 
 
 class YourBot(BaseBot):
+
     def _roll_bank_or_quit(self):
         """your logic here"""
 
-        score = GameLogic.get_scorers(self.last_roll, custom=True)
+        # we got a big help from Team(6) -Ammar, Ghaida- to get the idea of how can we 
+        # defeat the bot by minimizing the rolls each round and selecting the best of it
 
-        if score == 0:
-            return "r"
-        else:
-            return "b"
+        return "b" if len(self.last_roll) <= 1 else "r"
+
 
     def _enter_dice(self):
         """simulate user entering which dice to keep.
         Defaults to all scoring dice"""
+ 
+        cts = Counter(self.last_roll).most_common()
 
-        return super()._enter_dice()
+        res = ""
+        for i in range(len(cts)):
+            if (cts[i][0] == 1) or (cts[i][0] == 5) or (cts[i][1] > 2):
+                res += str(cts[i][0])*cts[i][1]
+
+        return res
+
 
 
 

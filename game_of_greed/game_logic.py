@@ -5,7 +5,7 @@ from collections import Counter
 class GameLogic:
 
     @staticmethod
-    def calculate_score(rolls):
+    def get_scorers(rolls, custom=False):
         """
         This function takes a tuple represents the rolls
         of dices (0 ~ 6), and return the score based on
@@ -25,15 +25,15 @@ class GameLogic:
 
         # go through every possible repeatetion and record the score for it
         if (counts_list[0][1] == 1) and (len(rolls) == 6):
-            return 1500
+            return 1500 if custom else "".join(str(i) for i in rolls) 
         elif (counts_list[0][1] == 2) and (len(counts_list) == 3) and (len(rolls) == 6):
             if counts_list[1][1] == 2:
-                return 1500
+                return 1500 if custom else "".join(str(i) for i in rolls) 
         elif (counts_list[0][1] == 3) and (len(counts_list) == 2) and (len(rolls) == 6):
             if counts_list[1][1] == 3:
-                return 1200
+                return 1200 if custom else "".join(str(i) for i in rolls)
         elif (counts_list[0][1] == 6) and (len(counts_list) == 1):
-            return (4000 if counts_list[0][0] == 1 else 400 * counts_list[0][0]) 
+            return (4000 if counts_list[0][0] == 1 else 400 * counts_list[0][0]) if custom else "".join(str(i) for i in rolls)  
         else:
             if counts_list[0][1] == 5:
                 score = score + (3000 if counts_list[0][0] == 1 else 300 * counts_list[0][0])
@@ -51,9 +51,10 @@ class GameLogic:
         # if there are any items left in the list after deletions, re call the function with that list,
         #   then add the returned value to the curren score  
         if len(rolls) != 0:
-            score += GameLogic.calculate_score(rolls)
+            score += GameLogic.get_scorers(rolls, custom=True)
                         
-        return score
+        # return score
+        return score if custom else "".join(str(i) for i in rolls)
 
 
     @staticmethod
